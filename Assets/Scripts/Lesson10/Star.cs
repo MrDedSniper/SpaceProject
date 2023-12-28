@@ -1,11 +1,13 @@
 using System;
+using UnityEditor;
 using UnityEngine;
+
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class Star : MonoBehaviour
 {
     private Mesh _mesh;
     [SerializeField] private ColorPoint _center;
-    [SerializeField] private ColorPoint[] _points;
+    [SerializeField, NonReorderable] private ColorPoint[] _points;
     [SerializeField] private int _frequency = 1;
     private Vector3[] _vertices;
     private Color[] _colors;
@@ -58,5 +60,4 @@ public class Star : MonoBehaviour
     {
         UpdateMesh();
     }
-
 }
